@@ -28,7 +28,12 @@ $ npm start
    * http://localhost:3000/tests/index.html - para os testes 
 
 
-4. Para rodar os testes na linha de comando:
+4. Para rodar os testes unitários na linha de comando:
 ```bash
-$ npm test
+$ npm run test
+```
+
+4. Para rodar os testes de integração na linha de comando:
+```bash
+$ npm run feature-tests
 ```

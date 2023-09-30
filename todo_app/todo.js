@@ -7,7 +7,7 @@ class TodoList {
     /**
      * if it should save and get from the localStorage
      */
-    SHOULD_USE_LOCAL_STORAGE = true;
+    SHOULD_USE_LOCAL_STORAGE = false;
 
     // Get information from localStorage
     constructor() {

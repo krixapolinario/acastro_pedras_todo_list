@@ -16,7 +16,6 @@ module("TodoList Class", function (hooks) {
 
     hooks.beforeEach(() => {
         todoList = new TodoList();
-        todoList.SHOULD_USE_LOCAL_STORAGE = false;
         todoList._todos = [];
     })
 
@@ -24,8 +23,8 @@ module("TodoList Class", function (hooks) {
         assert.deepEqual(todoList.todos, [], 'todos is empty');
     });
 
-    test("numberOfTodos | comeca com o valor 1", (assert) => {
-        assert.equal(todoList.numberOfTodos, 1, 'numberOfTodos eh 1')
+    test("numberOfTodos | comeca com o valor 0", (assert) => {
+        assert.equal(todoList.numberOfTodos, 0, 'numberOfTodos eh 0')
     });
 
     test.skip("hasTodos | tem que comecar falso", (assert) => {
