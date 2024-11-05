@@ -14,17 +14,10 @@ jobs:
         id: report
         uses: bearer/bearer-action@v2
         
-  ksoc-image-scan:
+  Anchore:
     runs-on: ubuntu-latest
     steps:
-      - name: Build Local Container
-        uses: docker/build-push-action@v4
+      - name: Scan current project
+        uses: anchore/scan-action@v3
         with:
-          tags: localbuild/testimage:latest
-          push: false
-          load: true
-      - name: KSOC Image Scan
-        uses: ksoclabs/image-scan-action@v0.0.4
-        with:
-          fail_on_severity: medium
-          image: localbuild/testimage:latest
+          path: "."
