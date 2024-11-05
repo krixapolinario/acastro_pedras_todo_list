@@ -21,3 +21,16 @@ jobs:
         uses: anchore/scan-action@v3
         with:
           path: "."
+
+  Steampipe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: turbot/steampipe-action-setup@v1
+        with:
+          steampipe-version: 'latest'
+          plugin-connections: |
+            connection "github" {
+              plugin = "github"
+              token  = "${{ secrets.GITHUB_TOKEN }}"
+            }
